@@ -4,7 +4,7 @@
             <th>#</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Description</th>
+           
             <th>Actions</th>
         </thead>
         <tbody>
@@ -12,9 +12,44 @@
                 <td>{{contact.id}}</td>
                 <td>{{contact.name}}</td>
                 <td>{{contact.email}}</td>
-                <td>{{contact.description}}</td>
-                <td><button class="btn btn-primary">View Details</button></td>
+                
+                <td><button class="btn btn-primary" (click)="showContact(contact)">View Details</button></td>
             </tr>
         </tbody>
     </table>
+    <div class="contaier" *ngIf="selectedContact">
+        <div class="row">
+            <div class="col-2">
+                ID
+            </div>
+            <div class="col">
+                {{selectedContact.id}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                Name
+            </div>
+            <div class="col">
+                {{selectedContact.name}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                Email
+            </div>
+            <div class="col">
+                {{selectedContact.email}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                Description
+            </div>
+            <div class="col">
+                {{selectedContact.description}}
+            </div>
+        </div>
+        
+    </div>
 </div>

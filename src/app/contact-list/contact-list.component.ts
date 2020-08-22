@@ -9,10 +9,14 @@ import { DataService } from '../data.service';
 export class ContactListComponent implements OnInit {
 
   contacts: any = [];
+  selectedContact;
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.contacts = this.dataService.getContacts();
   }
 
+  showContact(contact) {
+    this.selectedContact = contact;
+  }
 }
